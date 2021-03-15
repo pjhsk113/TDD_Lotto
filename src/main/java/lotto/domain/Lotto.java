@@ -9,7 +9,6 @@ import java.util.TreeSet;
 public class Lotto {
     private static final String OUT_OF_RANGE_NUMBER = "로또 범위에 벗어난 수입니다.";
     private static final String DUPLICATE_LOTTO_NUMBER = "숫자에 중복이 존재합니다.";
-    private static final int LOTTO_COUNT = 6;
 
     private final SortedSet<Integer> lottoNumbers;
 
@@ -31,7 +30,7 @@ public class Lotto {
     }
 
     private void validateOverlab(SortedSet<Integer> lottoNumbers) {
-        if (lottoNumbers.size() != LOTTO_COUNT) {
+        if (lottoNumbers.size() != LottoContant.LOTTO_COUNT) {
             throw new RuntimeException(DUPLICATE_LOTTO_NUMBER);
         }
     }
