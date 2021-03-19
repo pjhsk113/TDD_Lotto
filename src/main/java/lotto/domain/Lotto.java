@@ -5,6 +5,7 @@ import lotto.constant.LottoContant;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 public class Lotto {
     private static final String OUT_OF_RANGE_NUMBER = "로또 범위에 벗어난 수입니다.";
@@ -41,5 +42,9 @@ public class Lotto {
                 throw new RuntimeException(OUT_OF_RANGE_NUMBER);
             }
         });
+    }
+
+    public Stream<Integer> stream() {
+        return lottoNumbers.stream();
     }
 }
