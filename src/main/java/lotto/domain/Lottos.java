@@ -10,7 +10,7 @@ public class Lottos {
         this.lottos = lottos;
     }
 
-    public static Lottos of (List<Lotto> lottos) {
+    public static Lottos of(List<Lotto> lottos) {
         return new Lottos(lottos);
     }
 
