@@ -1,5 +1,7 @@
 package lotto;
 
+import lotto.domain.Lotto;
+import lotto.domain.LottoNumberGenerator;
 import lotto.domain.LottoShop;
 import lotto.domain.Lottos;
 import lotto.view.Input;
@@ -10,5 +12,8 @@ public class LottoApplication {
         int payment = Input.enterAmount();
         Lottos lottos = LottoShop.buyLotto(payment);
         Output.print(lottos);
+
+        Lotto winningNumber = LottoNumberGenerator.generateLottoNumber(Input.enterWinningNumber());
+
     }
 }
