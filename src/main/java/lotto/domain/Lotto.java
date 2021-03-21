@@ -22,6 +22,13 @@ public class Lotto {
         return new Lotto(new TreeSet<>(lottoNumbers));
     }
 
+    public int getHitCount(Lotto winningLotto) {
+        return winningLotto.stream()
+                .filter(lottoNumbers::contains)
+                .map(e -> 1)
+                .reduce(0, Integer::sum);
+    }
+
     /**
      * validation 메서드
      */
