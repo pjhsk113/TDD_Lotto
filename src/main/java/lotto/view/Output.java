@@ -11,6 +11,7 @@ public class Output {
     private static final String BUYING_FORMAT = "%d개를 구매했습니다.\n%s\n\n";
     private static final String WINNINNG_STATISTICS_MESSAGE = "당첨 통계.\n---------";
     private static final String STATISTICS_STATUS= "%d개 일치 (%d원)- %d개";
+    private static final String TOTAL_REVENUS= "총 수익률은 %.2f 입니다";
 
     private Output() { }
 
@@ -41,5 +42,9 @@ public class Output {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public static void printProfit(int purchaseAmount, LottoResults prizes) {
+        System.out.printf((TOTAL_REVENUS) + "%n", (double)prizes.getTotalReward() / purchaseAmount);
     }
 }
