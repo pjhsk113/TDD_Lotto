@@ -4,6 +4,7 @@ import lotto.domain.Lotto;
 import lotto.domain.LottoNumberGenerator;
 import lotto.domain.LottoShop;
 import lotto.domain.Lottos;
+import lotto.domain.lottoResult.LottoResults;
 import lotto.view.Input;
 import lotto.view.Output;
 
@@ -14,6 +15,8 @@ public class LottoApplication {
         Output.print(lottos);
 
         Lotto winningNumber = LottoNumberGenerator.generateLottoNumber(Input.enterWinningNumber());
+        LottoResults lottoResult = lottos.getLottoResult(winningNumber);
 
+        Output.printLottoResult(lottoResult);
     }
 }
