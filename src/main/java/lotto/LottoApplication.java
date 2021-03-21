@@ -18,5 +18,6 @@ public class LottoApplication {
         LottoResults lottoResult = lottos.getLottoResult(winningNumber);
 
         Output.printLottoResult(lottoResult);
+        Output.printProfit(payment, lottoResult);
     }
 }
