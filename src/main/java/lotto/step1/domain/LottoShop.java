@@ -1,4 +1,4 @@
-package lotto.domain;
+package lotto.step1.domain;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

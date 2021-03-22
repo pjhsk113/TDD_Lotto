@@ -1,4 +1,4 @@
-package lotto.constant;
+package lotto.step1.constant;
 
 public class LottoContant {
     private LottoContant() { }

@@ -1,6 +1,6 @@
-package lotto.domain;
+package lotto.step1.domain;
 
-import lotto.constant.LottoContant;
+import lotto.step1.constant.LottoContant;
 
 import java.util.Arrays;
 import java.util.Collections;

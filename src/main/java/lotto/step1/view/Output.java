@@ -1,9 +1,9 @@
-package lotto.view;
+package lotto.step1.view;
 
-import lotto.domain.Lotto;
-import lotto.domain.Lottos;
-import lotto.domain.lottoResult.LottoResult;
-import lotto.domain.lottoResult.LottoResults;
+import lotto.step1.domain.Lotto;
+import lotto.step1.domain.Lottos;
+import lotto.step1.domain.lottoResult.LottoResult;
+import lotto.step1.domain.lottoResult.LottoResults;
 
 import java.util.stream.Collectors;
 

@@ -1,12 +1,12 @@
-package lotto;
+package lotto.step1;
 
-import lotto.domain.Lotto;
-import lotto.domain.LottoNumberGenerator;
-import lotto.domain.LottoShop;
-import lotto.domain.Lottos;
-import lotto.domain.lottoResult.LottoResults;
-import lotto.view.Input;
-import lotto.view.Output;
+import lotto.step1.domain.Lotto;
+import lotto.step1.domain.LottoNumberGenerator;
+import lotto.step1.domain.LottoShop;
+import lotto.step1.domain.Lottos;
+import lotto.step1.domain.lottoResult.LottoResults;
+import lotto.step1.view.Input;
+import lotto.step1.view.Output;
 
 public class LottoApplication {
     public static void main(String[] args) {

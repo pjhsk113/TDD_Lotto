@@ -1,4 +1,4 @@
-package lotto.domain.lottoResult;
+package lotto.step1.domain.lottoResult;
 
 public class WinCount {
     private int numberOfWin;

@@ -1,6 +1,6 @@
-package lotto.domain;
+package lotto.step1.domain;
 
-import lotto.domain.lottoResult.LottoResults;
+import lotto.step1.domain.lottoResult.LottoResults;
 
 import java.util.List;
 import java.util.stream.Stream;
