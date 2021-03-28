@@ -4,13 +4,15 @@ import lotto.step2.domain.Lotto;
 import lotto.step2.domain.Lottos;
 import lotto.step2.domain.lottoResult.LottoResult;
 import lotto.step2.domain.lottoResult.LottoResults;
+import lotto.step2.domain.lottoResult.Rank;
 
 import java.util.stream.Collectors;
 
 public class Output {
     private static final String BUYING_FORMAT = "%d개를 구매했습니다.\n%s\n\n";
-    private static final String WINNINNG_STATISTICS_MESSAGE = "당첨 통계.\n---------";
+    private static final String WINNING_STATISTICS_MESSAGE = "당첨 통계.\n---------";
     private static final String STATISTICS_STATUS= "%d개 일치 (%d원)- %d개";
+    private static final String SECOND_STATUS= "%d개 일치, 보너스 볼 일치 (%d원)- %d개";
     private static final String TOTAL_REVENUS= "총 수익률은 %.2f 입니다";
 
     private Output() { }
@@ -30,7 +32,7 @@ public class Output {
     }
 
     public static void printLottoResult(LottoResults prizes) {
-        System.out.println(WINNINNG_STATISTICS_MESSAGE);
+        System.out.println(WINNING_STATISTICS_MESSAGE);
         System.out.println(printLottoPrizes(prizes));
     }
 
@@ -38,7 +40,10 @@ public class Output {
         StringBuilder sb = new StringBuilder();
 
         for (LottoResult value : prizes.getLottoResults()) {
-            sb.append(String.format(STATISTICS_STATUS, value.getHitNumber(), value.getMoney(), value.getWinCount()));
+
+            sb.append(String.format(
+                    value.isWinningNumber(Rank.SECOND) ? SECOND_STATUS : STATISTICS_STATUS,
+                    value.getHitNumber(), value.getMoney(), value.getWinCount()));
             sb.append("\n");
         }
         return sb.toString();

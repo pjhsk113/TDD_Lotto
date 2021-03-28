@@ -15,7 +15,9 @@ public class LottoApplication {
         Output.print(lottos);
 
         Lotto winningNumber = LottoNumberGenerator.generateLottoNumber(Input.enterWinningNumber());
-        LottoResults lottoResult = lottos.getLottoResult(winningNumber);
+        int bonusNumber = Input.enterBonusNumber();
+
+        LottoResults lottoResult = lottos.getLottoResult(winningNumber, bonusNumber);
 
         Output.printLottoResult(lottoResult);
         Output.printProfit(payment, lottoResult);
