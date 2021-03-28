@@ -29,6 +29,10 @@ public class Lotto {
                 .reduce(0, Integer::sum);
     }
 
+    public boolean hasBonusNumber(int bonusNumber) {
+        return lottoNumbers.contains(bonusNumber);
+    }
+
     /**
      * validation 메서드
      */
