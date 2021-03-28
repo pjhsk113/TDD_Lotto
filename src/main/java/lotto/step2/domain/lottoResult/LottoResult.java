@@ -13,8 +13,8 @@ public class LottoResult {
         return new LottoResult(rank, new WinCount(0));
     }
 
-    public void win(int hitNumber) {
-        if (rank != Rank.valueOf(hitNumber)) {
+    public void win(int hitNumber, boolean bonusNumber) {
+        if (rank != Rank.valueOf(hitNumber, bonusNumber)) {
             return;
         }
         winCount.plus();
@@ -34,5 +34,9 @@ public class LottoResult {
 
     public int winningProfit() {
         return winCount.moneyCount(rank.getReward());
+    }
+
+    public boolean isWinningNumber(Rank second) {
+        return rank.equals(second);
     }
 }

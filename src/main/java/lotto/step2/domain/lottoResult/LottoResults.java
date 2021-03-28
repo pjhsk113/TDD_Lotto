@@ -18,9 +18,9 @@ public class LottoResults {
                 .collect(Collectors.toList()));
     }
 
-    public void win(int hitCount) {
+    public void win(int hitCount, boolean hasBonusNumber) {
         for (LottoResult result : lottoResults) {
-            result.win(hitCount);
+            result.win(hitCount, hasBonusNumber);
         }
     }
 

@@ -24,10 +24,10 @@ public class Lottos {
         return lottos.stream();
     }
 
-    public LottoResults getLottoResult(Lotto winningNumbers) {
+    public LottoResults getLottoResult(Lotto winningNumbers, int bonusNumber) {
         LottoResults lottoResults = LottoResults.of();
         for (Lotto lotto : lottos) {
-            lottoResults.win(lotto.getHitCount(winningNumbers));
+            lottoResults.win(lotto.getHitCount(winningNumbers), lotto.hasBonusNumber(bonusNumber));
         }
         return lottoResults;
     }
