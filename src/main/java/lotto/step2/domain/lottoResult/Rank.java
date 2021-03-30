@@ -27,9 +27,11 @@ public enum Rank {
     }
 
     public static Rank valueOf(int hit, boolean hasBonusNumber) {
+        if (hit == 5) {
+            return hasBonusNumber ? Rank.SECOND : Rank.THIRD;
+        }
         return Arrays.stream(values())
                 .filter(rank -> rank.getHit() == hit)
-                .filter(rank -> !rank.equals(SECOND) || hasBonusNumber)
                 .findFirst()
                 .orElse(LOSE);
     }
