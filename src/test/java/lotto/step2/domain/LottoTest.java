@@ -66,4 +66,13 @@ class LottoTest {
                 Arguments.of(Arrays.asList(2, 2, 3, 4, 9, 9))
         );
     }
+
+    @DisplayName("당첨번호와 로또 간 맞은 개수 체크 테스트")
+    @Test
+    void matchedTest() {
+        Lotto lotto = Lotto.of(Arrays.asList(1,2,3,4,5,6));
+        Lotto winningNumber = Lotto.of(Arrays.asList(1,2,3,4,5,7));
+
+        assertThat(lotto.getHitCount(winningNumber)).isEqualTo(5);
+    }
 }
