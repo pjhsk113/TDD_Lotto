@@ -1,5 +1,5 @@
 # 로또(자동)
-[소스코드 바로보기](https://github1.com/pjhsk113/TDD_Lotto)
+[소스코드 바로보기](https://github1s.com/pjhsk113/TDD_Lotto)
 <br/>
 
 ## **기능 요구사항**
