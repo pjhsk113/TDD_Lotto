@@ -1,6 +1,13 @@
 package lotto.step2.view;
 
+import lotto.step2.domain.Lotto;
+import lotto.step2.domain.LottoNumberGenerator;
+
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class Input {
     private static final String ENTER_PURCHASE_AMOUNT_MESSAGE = "구입 금액을 입력해주세요.";
@@ -21,10 +28,15 @@ public class Input {
         return sc.nextInt();
     }
 
-    public static String enterManualNumber() {
+    public static List<Lotto> enterManualNumber(int manualCount) {
         System.out.println(ENTER_MANUAL_LOTTO_NUMBER_MESSAGE);
-        sc.nextLine();
-        return sc.nextLine();
+        return Stream.generate(Input::inputLotto)
+                .limit(manualCount)
+                .collect(toList());
+    }
+
+    private static Lotto inputLotto() {
+        return LottoNumberGenerator.generateLottoNumber(sc.nextLine());
     }
 
     public static String enterWinningNumber() {
