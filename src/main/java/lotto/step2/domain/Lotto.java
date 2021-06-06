@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class Lotto {
     private static final String OUT_OF_RANGE_NUMBER = "로또 범위에 벗어난 수입니다.";
-    private static final String DUPLICATE_LOTTO_NUMBER = "숫자에 중복이 존재합니다.";
+    private static final String DUPLICATE_LOTTO_NUMBER_OR_INVALID_NUMBER = "숫자에 중복이 존재하거나 잘못 입력하셨습니다.";
 
     private final SortedSet<Integer> lottoNumbers;
 
@@ -43,7 +43,7 @@ public class Lotto {
 
     private void validateOverlab(SortedSet<Integer> lottoNumbers) {
         if (lottoNumbers.size() != LottoContant.LOTTO_COUNT) {
-            throw new RuntimeException(DUPLICATE_LOTTO_NUMBER);
+            throw new RuntimeException(DUPLICATE_LOTTO_NUMBER_OR_INVALID_NUMBER);
         }
     }
 
