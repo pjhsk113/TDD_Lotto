@@ -9,7 +9,7 @@ import lotto.step3.domain.lottoResult.Rank;
 import java.util.stream.Collectors;
 
 public class Output {
-    private static final String BUYING_FORMAT = "%d개를 구매했습니다.\n%s\n\n";
+    private static final String BUYING_FORMAT = "수동으로 %d장, 자동으로 %d장을 구매했습니다.\n%s\n\n";
     private static final String WINNING_STATISTICS_MESSAGE = "당첨 통계.\n---------";
     private static final String STATISTICS_STATUS= "%d개 일치 (%d원)- %d개";
     private static final String SECOND_STATUS= "%d개 일치, 보너스 볼 일치 (%d원)- %d개";
@@ -17,11 +17,17 @@ public class Output {
 
     private Output() { }
 
-    public static void print(Lottos lottos) {
+    public static void print(Lottos lottos, int manualLottoCount) {
         String lottoList = lottos.stream()
                 .map(Output::getLotto)
                 .collect(Collectors.joining("\n"));
-        System.out.printf(BUYING_FORMAT, lottos.getLottoCount(), lottoList);
+
+        System.out.printf(
+                BUYING_FORMAT,
+                manualLottoCount,
+                lottos.getLottoCount() - manualLottoCount,
+                lottoList
+        );
     }
 
     private static String getLotto(Lotto lotto) {

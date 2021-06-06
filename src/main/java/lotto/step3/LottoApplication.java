@@ -16,7 +16,7 @@ public class LottoApplication {
         int manualLottoCount = Input.enterManualNumberCount();
         List<Lotto> manualLottoNumbers = Input.enterManualNumber(manualLottoCount);
         Lottos lottos = LottoShop.buyLotto(payment, manualLottoNumbers);
-        Output.print(lottos);
+        Output.print(lottos, manualLottoCount);
 
         Lotto winningNumber = LottoNumberGenerator.generateLottoNumber(Input.enterWinningNumber());
         int bonusNumber = Input.enterBonusNumber();
