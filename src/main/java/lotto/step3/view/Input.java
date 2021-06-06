@@ -25,11 +25,13 @@ public class Input {
 
     public static int enterManualNumberCount() {
         System.out.println(ENTER_MANUAL_LOTTO_COUNT_MESSAGE);
+        sc.nextLine();
         return sc.nextInt();
     }
 
     public static List<Lotto> enterManualNumber(int manualCount) {
         System.out.println(ENTER_MANUAL_LOTTO_NUMBER_MESSAGE);
+        sc.nextLine();
         return Stream.generate(Input::inputLotto)
                 .limit(manualCount)
                 .collect(toList());
@@ -41,7 +43,6 @@ public class Input {
 
     public static String enterWinningNumber() {
         System.out.println(ENTER_WINNING_NUMBER_MESSAGE);
-        sc.nextLine();
         return sc.nextLine();
     }
 
