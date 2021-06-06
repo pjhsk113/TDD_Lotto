@@ -13,6 +13,7 @@ public class LottoShop {
     public static Lottos buyLotto(int payment, List<Lotto> lottos) {
         validatePayment(payment);
         int remainingPayment = payment - lottos.size() * THOUSAND;
+        validateRemainPayment(remainingPayment);
         lottos.addAll(buyAutoLotto(remainingPayment));
         return Lottos.of(lottos);
     }
@@ -25,6 +26,12 @@ public class LottoShop {
 
     private static void validatePayment(int payment) {
         if (payment < THOUSAND) {
+            throw new IllegalArgumentException(LACK_MONEY);
+        }
+    }
+
+    private static void validateRemainPayment(int payment) {
+        if (payment < 0) {
             throw new IllegalArgumentException(LACK_MONEY);
         }
     }
